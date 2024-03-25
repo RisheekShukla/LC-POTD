@@ -2,19 +2,23 @@ class Solution {
 public:
     int findDuplicate(vector<int>& nums) 
     {
-        int ind = 0;
-        int ans;
-        vector<int>vis(nums.size(),0);
-        while(true)
+        int sptr = nums[0];
+        int fptr = nums[0];
+        do
         {
-            if(vis[ind]==1)
-            {
-                ans = ind;
-                break;
-            }
-            vis[ind]=1;
-            ind = nums[ind];
+            sptr = nums[sptr];
+            fptr = nums[nums[fptr]];
+        } while(sptr!=fptr);
+        // slow uski jagah pr h
+        // start fast frpm start 
+        // dono ko same speed se badhana hai 
+        // to get point of collision
+        fptr = nums[0];
+        while(fptr!=sptr)
+        {
+            sptr = nums[sptr];
+            fptr = nums[fptr];
         }
-        return ans;
+        return fptr;
     }
 };
