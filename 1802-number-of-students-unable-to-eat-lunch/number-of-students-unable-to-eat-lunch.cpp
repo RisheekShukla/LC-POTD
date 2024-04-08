@@ -16,8 +16,7 @@ public:
             }
             else
             {   
-                ans = mss.size();
-                break;
+                return mss.size();
             }
         }
         return ans;
