@@ -7,7 +7,6 @@ public:
         {
             mss.insert(it);
         }    
-        int ans=0;
         for(int i=0;i<sandwiches.size();i++)
         {
             if(mss.find(sandwiches[i])!=mss.end())
@@ -19,6 +18,6 @@ public:
                 return mss.size();
             }
         }
-        return ans;
+        return 0;
     }
 };
