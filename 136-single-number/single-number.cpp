@@ -1,11 +1,11 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        int xors=0;
+        int xorr=0;
         for(auto it:nums)
         {
-            xors = xors^it;
+            xorr = xorr^it;
         }
-        return xors;
+        return xorr;
     }
 };
